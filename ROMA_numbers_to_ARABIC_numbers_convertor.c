@@ -2,70 +2,69 @@
 
 int main()
 {
-    int x = 1999;
+    int x = 19;
     
-    switch(x){
-      case 0:
+    if(x == 0)
       printf("V římských číslicích není označení pro nulu!");
-      break;
-    }
-    while (x != 0){
-      if (x >= 1000){
-        printf("M");
-        x -= 1000;
+    
+    if(x > 0){
+      while(x != 0){
+        switch(x){
+            case 1000 ... 100000:
+              printf("M");
+              x -= 1000;
+              break;
+            case 900 ... 999:
+              printf("CM");
+              x -= 900;
+              break;
+            case 500 ... 899:
+              printf("D");
+              x -= 500;
+              break;
+            case 400 ... 499:
+              printf("CD");
+              x -= 400;
+              break;
+            case 100 ... 399:
+              printf("C");
+              x -= 100;
+              break;
+            case 90 ... 99:
+              printf("XC");
+              x -= 90;
+              break;
+            case 50 ... 89:
+              printf("L");
+              x -= 50;
+              break;
+            case 40 ... 49:
+              printf("XL");
+              x -= 40;
+              break;
+            case 10 ... 39:
+              printf("X");
+              x -= 10;
+              break;
+            case 9:
+              printf("IX");
+              x -= 9;
+              break;
+            case 5 ... 8:
+              printf("V");
+              x -= 5;
+              break;
+            case 4:
+              printf("IV");
+              x -= 4;
+              break;
+            case 1 ... 3:
+              printf("I");
+              x -= 1;
+              break;
+        }
       }
-      else if (x >= 900){
-        printf("CM");
-        x -= 900;
-      }
-      else if (x >= 500){
-        printf("D");
-        x -= 500;
-      }
-      else if (x >= 400){
-        printf("CD");
-        x -= 400;
-      }
-      else if (x >= 100){
-        printf("C");
-        x -= 100;
-      }
-      else if (x >= 90){
-        printf("XC");
-        x -= 90;
-      }
-      else if (x >= 50){
-        printf("L");
-        x -= 50;
-      }
-      else if (x >= 40){
-        printf("XL");
-        x -= 40;
-      }
-      else if (x >= 10){
-        printf("X");
-        x -= 10;
-      }
-      else if (x >= 9){
-        printf("IX");
-        x -= 9;
-      }
-      else if (x >= 5){
-        printf("V");
-        x -= 5;
-      }
-      else if (x >= 4){
-        printf("IV");
-        x -= 4;
-      }
-      else if (x >= 1){
-        printf("I");
-        x -= 1;
-      }
-      else if (x < 0){
-        printf("Římané neměli záporná čísla!");
-        break;
-      }
-    }
+    }else
+    printf("Římané neměli záporná čísla!");
     return 0;
 }
